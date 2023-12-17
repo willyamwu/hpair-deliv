@@ -170,7 +170,7 @@ export default function App() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Links for Climate Good
+              Outreach Contacts
             </Typography>
             <Typography
               component="h1"

@@ -5,7 +5,7 @@ import { collection, addDoc, doc, updateDoc, deleteDoc } from "firebase/firestor
 
 export const emptyEntry = {
    name: "",
-   link: "",
+   email: "",
    description: "",
    user: "",
    category: 0,
@@ -14,7 +14,7 @@ export const emptyEntry = {
 export async function addEntry(entry) {
    await addDoc(collection(db, "entries"), {
       name: entry.name,
-      link: entry.link,
+      email: entry.email,
       description: entry.description,
       user: entry.user,
       category: entry.category,
@@ -26,7 +26,7 @@ export async function updateEntry(entry) {
    const entryRef = doc(db, "entries", entry.id);
    await updateDoc(entryRef, {
       name: entry.name,
-      link: entry.link,
+      email: entry.email,
       description: entry.description,
       category: entry.category
    });

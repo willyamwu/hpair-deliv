@@ -25,7 +25,7 @@ export default function EntryModal({ entry, type, user }) {
    const [isEditing, setIsEditing] = useState(false);
 
    const [name, setName] = useState(entry.name);
-   const [link, setLink] = useState(entry.link);
+   const [email, setEmail] = useState(entry.email);
    const [description, setDescription] = useState(entry.description);
    const [category, setCategory] = React.useState(entry.category);
 
@@ -34,7 +34,7 @@ export default function EntryModal({ entry, type, user }) {
    const handleClickOpen = () => {
       setOpen(true);
       setName(entry.name);
-      setLink(entry.link);
+      setEmail(entry.email);
       setDescription(entry.description);
       setCategory(entry.category);
    };
@@ -49,7 +49,7 @@ export default function EntryModal({ entry, type, user }) {
    const handleEdit = () => {
       const updatedEntry = {
          name: name,
-         link: link,
+         email: email,
          description: description,
          category: category,
          id: entry.id
@@ -61,7 +61,7 @@ export default function EntryModal({ entry, type, user }) {
    const handleAdd = () => {
       const newEntry = {
          name: name,
-         link: link,
+         email: email,
          description: description,
          user: user?.displayName,
          category: category,
@@ -125,13 +125,13 @@ export default function EntryModal({ entry, type, user }) {
                />
                <TextField
                   margin="normal"
-                  id="link"
-                  label="Link"
-                  placeholder="e.g. https://google.com"
+                  id="email"
+                  label="Email"
+                  placeholder="e.g. john_doe@google.com"
                   fullWidth
                   variant="standard"
-                  value={link}
-                  onChange={(event) => { setLink(event.target.value) }}
+                  value={email}
+                  onChange={(event) => { setEmail(event.target.value) }}
                   InputProps={{
                      readOnly: type === "edit" ? !isEditing : false,
                   }}
