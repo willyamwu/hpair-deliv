@@ -150,7 +150,7 @@ export default function EntryModal({ entry, type, user }) {
                      readOnly: type === "edit" ? !isEditing : false,
                   }}
                />
-               <FormControl fullWidth sx={{ "margin-top": 20 }}>
+               <FormControl fullWidth sx={{ "marginTop": 20 }}>
                   <InputLabel id="demo-simple-select-label">Category</InputLabel>
                   <Select
                      labelId="demo-simple-select-label"
@@ -162,7 +162,11 @@ export default function EntryModal({ entry, type, user }) {
                         readOnly: type === "edit" ? !isEditing : false,
                      }}
                   >
-                     {categories.map((category) => (<MenuItem value={category.id}>{category.name}</MenuItem>))}
+                     {categories.map((category) => (
+                        <MenuItem key={category.id} value={category.id}>
+                        {category.name}
+                        </MenuItem>
+                     ))}
                   </Select>
                </FormControl>
             </DialogContent>

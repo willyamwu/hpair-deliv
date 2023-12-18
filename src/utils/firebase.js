@@ -18,7 +18,7 @@ const firebaseConfig = {
    storageBucket: "hpair-deliv.appspot.com",
    messagingSenderId: "974578239414",
    appId: "1:974578239414:web:ae41aac204347839d92317"
-};
+ };
 
 // Configure FirebaseUI.
 const uiConfig = {
