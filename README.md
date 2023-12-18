@@ -1,11 +1,13 @@
 # About the Deliverable
+## Task
 HPAIR needs a new portal to maintain all of the contact information for the prospective speakers that CP (conference programming) is diligently reaching out to. Here you will find a template for a partially built app. Now, your task is the following:
 - [ ] Read through and understand the repo code (this is a *very* similar tech stack to what we will be using!)
 - [ ] Add 2 functional features to the website.
 - [ ] Change 1 design feature of the website to improve the visual appeal.
-- [ ] Make any other improvements you have (be creative!)
+- [ ] Make any other improvements (be creative!)
 
-Feel free to add any specific details or tasks relevant to the deliverable.
+## Submission
+Please create an account at [https://www.vercel.com](Vercel) and then link your repo. It should automatically pull and build your `main` branch. Be sure to check that you are not getting any errors before submitting.
 
 # Getting Started with Create React App
 
