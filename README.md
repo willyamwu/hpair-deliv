@@ -7,7 +7,8 @@ HPAIR needs a new portal to maintain all of the contact information for the pros
 - [ ] Make any other improvements (be creative!)
 
 ## Submission
-Please create an account at [https://www.vercel.com](Vercel) and then link your repo. It should automatically pull and build your `main` branch. Be sure to check that you are not getting any errors before submitting.
+Please create an account at [Vercel](https://www.vercel.com) and then link your repo. It should automatically pull and build your `main` branch. Be sure to check that you are not getting any errors before submitting.
+
 
 # Getting Started with Create React App
 
