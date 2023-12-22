@@ -15,6 +15,26 @@ import { categories } from "../utils/categories";
 import { addEntry, deleteEntry, updateEntry } from "../utils/mutations";
 import { Edit } from "@mui/icons-material";
 
+function isValid(name, email, number) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let nameValid = name.trim() !== "";
+  let numberValid = /^\d{10}$/.test(number) || String(number) === "";
+  let emailValid = emailRegex.test(email) || email === "";
+
+  if (!nameValid) {
+    alert("Please enter a name before editing the entry.");
+    return false;
+  } else if (!emailValid) {
+    alert("Please enter a valid email.");
+    return false;
+  } else if (!numberValid) {
+    alert("Please enter a valid phone number 1234567890.");
+    return false;
+  }
+
+  return true;
+}
+
 // Modal component for BOTH adding and editing entries
 
 export default function EntryModal({ entry, type, user }) {
@@ -63,14 +83,7 @@ export default function EntryModal({ entry, type, user }) {
   // Mutation handlers
 
   const handleEdit = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // Convert the number to a string
-    let numberValid = String(tel).length === 10 || String(tel) === "";
-
-    let nameValid = name.trim() !== "";
-    let emailValid = emailRegex.test(email) || email === "";
-
-    if (nameValid && emailValid && numberValid) {
+    if (isValid(name, email, tel)) {
       const updatedEntry = {
         name: name,
         email: email,
@@ -82,24 +95,10 @@ export default function EntryModal({ entry, type, user }) {
       updateEntry(updatedEntry).catch(console.error);
       handleClose();
     }
-    if (!nameValid) {
-      alert("Please enter a name before editing the entry.");
-    } else if (!emailValid) {
-      alert("Please enter a valid email.");
-    } else if (!numberValid) {
-      alert("Please enter a valid phone number 1234567890.");
-    }
   };
 
   const handleAdd = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    let numberValid = String(tel).length === 10 || String(tel) === "";
-
-    let nameValid = name.trim() !== "";
-    let emailValid = emailRegex.test(email) || email === "";
-
-    if (nameValid && emailValid && numberValid) {
+    if (isValid(name, email, tel)) {
       const newEntry = {
         name: name,
         email: email,
@@ -112,13 +111,6 @@ export default function EntryModal({ entry, type, user }) {
 
       addEntry(newEntry).catch(console.error);
       handleClose();
-    }
-    if (!nameValid) {
-      alert("Please enter a name before editing the entry.");
-    } else if (!emailValid) {
-      alert("Please enter a valid email.");
-    } else if (!numberValid) {
-      alert("Please enter a valid phone number 1234567890.");
     }
   };
 
