@@ -15,6 +15,7 @@ export async function addEntry(entry) {
    await addDoc(collection(db, "entries"), {
       name: entry.name,
       email: entry.email,
+      tel: entry.tel,
       description: entry.description,
       user: entry.user,
       category: entry.category,
@@ -27,6 +28,7 @@ export async function updateEntry(entry) {
    await updateDoc(entryRef, {
       name: entry.name,
       email: entry.email,
+      tel: entry.tel,
       description: entry.description,
       category: entry.category
    });
