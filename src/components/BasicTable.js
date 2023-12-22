@@ -78,7 +78,7 @@ export default function BasicTable({ entries }) {
                     (sortConfig.direction === "asc" ? "🔼" : "🔽")}
                 </Button>
               </TableCell>
-              <TableCell>Phone Number</TableCell>
+              <TableCell>PHONE NUMBER</TableCell>
               <TableCell>
                 <Button onClick={() => handleSort("user")} variant="text">
                   Logger{" "}
@@ -86,7 +86,7 @@ export default function BasicTable({ entries }) {
                     (sortConfig.direction === "asc" ? "🔼" : "🔽")}
                 </Button>
               </TableCell>
-              <TableCell align="left">Category</TableCell>
+              <TableCell align="left">CATEGORY</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
