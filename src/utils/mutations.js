@@ -6,6 +6,7 @@ import { collection, addDoc, doc, updateDoc, deleteDoc } from "firebase/firestor
 export const emptyEntry = {
    name: "",
    email: "",
+   tel: "",
    description: "",
    user: "",
    category: 0,

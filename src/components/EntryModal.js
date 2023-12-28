@@ -18,7 +18,7 @@ import { Edit } from "@mui/icons-material";
 function isValid(name, email, number) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let nameValid = name.trim() !== "";
-  let numberValid = /^\d{10}$/.test(number) || String(number) === "";
+  let numberValid = /^\d{10}$/.test(number) || !number;
   let emailValid = emailRegex.test(email) || email === "";
 
   if (!nameValid) {

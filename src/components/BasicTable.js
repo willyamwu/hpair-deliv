@@ -12,6 +12,7 @@ import EntryModal from "./EntryModal";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 
+// Formats the phone number to be in (xxx)-xxx-xxxx format
 function formatPhoneNumber(phoneNumber) {
   if (!phoneNumber) {
     return "";
@@ -20,14 +21,18 @@ function formatPhoneNumber(phoneNumber) {
   return phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "($1)-$2-$3");
 }
 
+// Creates componenets
 export default function BasicTable({ entries }) {
+  // sortConfig holds three properties
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: "asc",
     clickCount: 0,
   });
+
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Takes column and sorts to asc if desc and desc if asc.
   const handleSort = (column) => {
     const newDirection =
       sortConfig.key === column && sortConfig.direction === "asc"
@@ -36,10 +41,12 @@ export default function BasicTable({ entries }) {
     setSortConfig({ key: column, direction: newDirection });
   };
 
+  // Disolays only the entries that are searched by the user
   const filteredEntries = entries.filter((entry) =>
     entry.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Sort the filtered entries
   const sortedEntries = [...filteredEntries].sort((a, b) => {
     if (sortConfig.key) {
       const keyA = a[sortConfig.key].toUpperCase();
